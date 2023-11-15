@@ -1,0 +1,276 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+
+body{
+    background-color: #26252a;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+
+.topbar{
+    padding: 10px;
+    height: 50px;
+
+}
+.topbar a{
+    text-decoration: none;
+    padding-right: 1%;
+    padding-top: 0.6%;
+    color: white;
+    float: right;
+    height: 35px;
+}
+.topbar a:hover{
+    text-decoration: underline;
+}
+.singinb{
+    float: right;
+    height: 80%;
+    width: 5%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #157fd6ea;
+    color: white;
+
+}
+.singinb:hover{
+    background-color: #168ef0ea;
+}
+.topbar button.bapps{
+    float: right;
+    color: white;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius:  5rem 5rem 5rem 5rem;
+    border: none;
+    background: none;
+}
+.topbar button.bapps:hover{
+    text-align: center;
+    margin: auto;
+    background-color: #4a4a4a;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius:  5rem 5rem 5rem 5rem;
+
+}
+
+
+
+
+.bigG{
+    padding-top: 6%;
+    font-size: 280%;
+    color: white;
+
+    text-align: center;
+}
+.fontg{
+    background: none;
+}
+
+
+
+.bsb{
+    margin: auto;
+    text-align: center;
+    background: none;
+
+}
+.searchbar{
+    margin: auto;
+    background: none;
+    align-items: center;
+    height: 50px;
+    width:30%;
+    white-space: nowrap;
+    border-radius: 5rem 5rem 5rem 5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    position: relative;
+
+}
+.searchbar:hover{
+    background-color: #3c3c3c;
+    border: none;
+}
+.searchbar input{
+    margin: 0;
+    font-size: medium;
+    height: 95%;
+    width: 60%;
+    text-align: left;
+    
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    background: none;
+}
+.sbut{
+    border: none;
+    outline: none;
+    background: none;
+}
+.icons{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 90%;
+    bottom: 9%;
+    padding: 10px 10px;
+}
+.iconc{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    padding: 10px 10px;
+}
+.iconc:hover{
+    background: none;
+}
+.iconm{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 15%;
+    bottom: 5%;
+    padding: 10px 10px;
+}
+.iconm:hover{
+    background: none;
+}
+
+
+
+
+
+
+.button1{
+    background: none;
+    padding-top: 1%;
+    text-align: center;
+    border: none;
+    outline:none;
+}
+.button2{
+    background: none;
+    margin: auto;
+    width: 30%;
+    height: 30px;
+
+}
+.button2 input{
+
+    /* padding-right: 10%;
+    padding-left: 10%; */
+}
+.butt1{
+    height: auto;
+    margin: auto;
+    height: 100%;
+    border: none;
+    background-color: #666666;
+    border-radius: 5px;
+    color: white;
+    
+}
+.butt1:hover{
+    background-color: #666666;
+    /* border-radius: 20px; */
+    outline-style: solid;
+    outline-width: thin;
+    outline: 10%;
+    border-color: white;
+    outline-color: white;
+}
+
+
+.blanguage{
+    padding-top: 20px;
+    white-space: nowrap;
+    font-size: small;
+    margin: auto;
+    text-align: center;
+    background: none;
+}
+.blanguage *{
+    display: inline;
+}
+.inblanguage{
+    background: none;
+    margin: auto;
+    height: 50%;
+    width: 30%;
+    color: white;
+}
+.inblanguage a{
+    color: #0b7dda;
+}
+
+
+
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #171717;
+    color: white;
+}
+.country{
+    margin: auto;
+    border: 2px;
+    outline:2px;
+    height: fit-content;
+    border-bottom: 1px solid #666666;
+
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+.navbar{
+    padding: 10px;
+    background: none;
+}
+
+a:link{ text-decoration: none;}
+
+.navbar a{
+    color: aliceblue;
+    padding-right: 2%;
+    font-family: 'Roboto', sans-serif;
+
+}
+.navbar a:hover{
+    text-decoration: underline;
+}
+
+.navbar a.splint{
+    text-decoration: none;
+    float: right;
+    color: white;
+    
+}
+.navbar a.splint:hover{
+    text-decoration: underline;
+}
