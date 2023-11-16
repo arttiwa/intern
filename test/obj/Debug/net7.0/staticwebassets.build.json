@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "sA501ze6yGFd9hb8YFkGUq3wjgSiFOyEx/OWBuLxTQg=",
+  "Source": "test",
+  "BasePath": "_content/test",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "test/wwwroot",
+      "Source": "test",
+      "ContentRoot": "/Users/dis_trainee_02/Desktop/test/wwwroot/",
+      "BasePath": "_content/test",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/dis_trainee_02/Desktop/test/wwwroot/deetail.txt",
+      "SourceId": "test",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/dis_trainee_02/Desktop/test/wwwroot/",
+      "BasePath": "_content/test",
+      "RelativePath": "deetail.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/deetail.txt"
+    }
+  ]
+}

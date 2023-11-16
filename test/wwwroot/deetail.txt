@@ -1,0 +1,1 @@
+3. Folder wwwroot นี้เป็นตัวเก็บพวกไฟล์ css , js , images ฯลฯ เพื่อ ให้เราเรียกใช้ผ่าน URI ได้เลย เช่น http://localhost:5000/images/logo.png อะไรประมาณนี้
