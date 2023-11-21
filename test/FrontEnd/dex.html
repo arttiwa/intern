@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DexTest</title>
+    <link rel="stylesheet" href="styleTest.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="conTable">
+        <table id="table">
+            <tr>
+                <th>tag no</th>
+                <th>pipe size</th>
+                <th>pipe location</th>
+                <th>installation date</th>
+                <th>inspection interval</th>
+                <th>more</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.body.onload = loadData;
+        const table = document.getElementById("table");
+
+        
+        async function loadData() {
+            const response = await fetch('https://dis02.dexon-technology.com/api/dexon-exam/get-data-list')
+            .then(response => response.json())
+            .then(data =>  {
+                for (let i = 0; i < data.length; i++) {
+                    console.log(data[i]);  
+                    const newTr = document.createElement("tr");
+                    const newTd1 = document.createElement("td");
+                    const newTd2 = document.createElement("td");
+                    const newTd3 = document.createElement("td");
+                    //const newTd4 = document.createElement("td");
+                    const newTd5 = document.createElement("td");
+                    const newTd6 = document.createElement("td");
+                    const newTd7 = document.createElement("td");
+
+                    
+                    const msec = data[i].installation_date
+                    const indo = new Date(msec);
+
+                    const iconBin = document.createElement("i");
+                    iconBin.className = "gg-trash"
+                    const iconPen = document.createElement("i");
+                    iconPen.className = "gg-pen"
+
+                    const butPen = document.createElement("button")
+                    //butPen = className = "editPen"
+                    const butBin = document.createElement("button")
+                    //butBin = className = "editBin"
+
+
+                    newTd1.innerHTML = data[i].tag_no
+                    newTd2.innerHTML = data[i].pipe_size
+                    newTd3.innerHTML = data[i].pipe_location
+                    //newTd4.innerHTML = data[i].is_active
+                    newTd5.innerHTML = indo.getDate() + "  "+ indo.getMonth() + "  " + indo.getFullYear()
+                    newTd6.innerHTML = data[i].inspection_interval
+
+                    butPen.appendChild(iconPen)
+                    butBin.appendChild(iconBin)
+
+                    newTd7.appendChild(butPen)
+                    newTd7.appendChild(butBin)
+
+                    newTr.appendChild(newTd1)
+                    newTr.appendChild(newTd2)
+                    newTr.appendChild(newTd3)
+                    //newTr.appendChild(newTd4)
+                    newTr.appendChild(newTd5)
+                    newTr.appendChild(newTd6)
+                    newTr.appendChild(newTd7)
+
+                    table.appendChild(newTr)
+                }
+
+
+            }
+        )
+    }
+
+    </script>
+</body>
+
+</html>

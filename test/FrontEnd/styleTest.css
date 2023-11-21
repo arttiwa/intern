@@ -1,0 +1,65 @@
+body{
+  background: rgb(89, 85, 85);
+  text-align: center;
+  align-items: center;
+
+
+  
+}
+
+.conTable{
+  text-align: center;
+  background: wheat;
+  height: 100%;
+  width: auto;
+  margin-top: 20%;
+
+}
+
+table {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  width: 100%;
+  border: none;
+}
+tr{
+  border:1px solid none;
+  text-align: center;
+
+}
+tr:hover{
+  background-color: coral;
+
+}
+th {
+  border:1px solid none;
+  text-align: center;
+  height: 30px;
+  border-bottom: 1px solid #ddd;
+  background: none;
+}
+td{
+  border:1px solid none;
+  text-align: center;
+  height: 30px;
+  border-bottom: 1px solid #ddd;
+  background: none;
+
+}
+td button{
+  border:1px solid none;
+  text-align: center;
+  height: 30px;
+  background: blueviolet;
+  padding-left: 10%;
+  border-radius: 5px;
+  margin: auto;
+}
+td button:hover{
+  border:1px solid none;
+  text-align: center;
+  height: 30px;
+  background: blue;
+  cursor: pointer;
+}

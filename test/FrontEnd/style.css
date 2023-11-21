@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+
+
+
+body{
+    background: #2E3047;
+    text-align: center;
+    margin: auto;
+    padding-top: 15%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.container{
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    background: rgb(151, 146, 133);
+    width: auto;
+    max-width: 30%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    height: auto;
+
+}
+
+.bInput{
+    text-align: center;
+    margin: auto;
+    align-items: center;
+    background: rgb(198, 196, 183);
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-top: 3px;
+
+
+}
+.bInput input{
+    text-align: left;
+    background: none;
+    width: 95%;
+    border-radius: 5px;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+
+}
+.login{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    background: none;
+    padding: 10px;
+
+}
+.login button{
+    padding: 5px;
+    margin: auto;
+    background: rgb(193, 187, 146);
+    width: 97%;
+    height: auto;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor:pointer;
+    text-align: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.login button:hover{
+    background: rgb(198, 196, 183);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="">
+            <h1>Login</h1>
+        </div>
+
+        <div class="">
+            <div class="bInput">
+                <input  type="text" id="loginUsername"required placeholder="Username" >
+            </div>
+        </div>
+
+
+        <div class="">
+            <div class="bInput">
+                <input type="password" id="loginPassword"required placeholder="Password" >
+            </div>
+        </div>
+
+        <div class="login">
+            <button onclick=login()>Login</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("loginUsername").value;
+            var password = document.getElementById("loginPassword").value;
+
+            if(username.trim() === "" || password.trim() === ""){
+                alert('Please enter both username and password');
+                return ;
+            }
+            
+            // ตัวอย่าง URL ของ API
+            var apiUrl = 'https://localhost:7046/api/Simple/getUser-NP?uname=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password);
+            fetch(apiUrl)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Login failed');
+                    }
+                })
+                .then(data => {
+                    console.log(data);
+                    window.location.href = 'Home.html';
+                    alert('Welcome  '+ username + "  Long time no see")
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Your username or password is incorrect')
+                    // can't login
+                });
+        }
+    </script>
+</body>
+
+</html>
