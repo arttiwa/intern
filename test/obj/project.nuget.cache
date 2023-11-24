@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p3nu6l1DBoqdL2Cc9PNvdRWV0/7WArIaN03njuroOA2Q00ghrluq1BKQBtevs3aepQ8DdChmDzQvB12J1aEL2w==",
+  "dgSpecHash": "qeJqA4t+pr0puL4bZZj2OYdqqNdAki3kLLU1+vh4fMTRTgAdOXfCMeS9GIKgotc9WjTqo8F5vsusPjVzvWLuRA==",
   "success": true,
   "projectFilePath": "/Users/dis_trainee_02/Desktop/test/test.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "/Users/dis_trainee_02/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/dis_trainee_02/.nuget/packages/mysqlconnector/2.3.0/mysqlconnector.2.3.0.nupkg.sha512",
     "/Users/dis_trainee_02/.nuget/packages/mysqlconnector.dependencyinjection/2.3.0/mysqlconnector.dependencyinjection.2.3.0.nupkg.sha512",
+    "/Users/dis_trainee_02/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/dis_trainee_02/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/dis_trainee_02/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/dis_trainee_02/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

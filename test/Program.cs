@@ -1,6 +1,15 @@
 using MySqlConnector;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+{
+    builder.WithOrigins("*")
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+
+// U Can Filter Here
+}));
+
 // Add services to the container.
 builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("Default")!);
 
@@ -20,7 +29,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("MyPolicy");
+
 app.UseAuthorization();
+
 
 app.MapControllers();
 

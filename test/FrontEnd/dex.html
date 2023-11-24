@@ -9,85 +9,292 @@
     <link rel="stylesheet" href="styleTest.css">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/pen.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/math-plus.css' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="conTable">
-        <table id="table">
-            <tr>
-                <th>tag no</th>
-                <th>pipe size</th>
-                <th>pipe location</th>
-                <th>installation date</th>
-                <th>inspection interval</th>
-                <th>more</th>
-            </tr>
-        </table>
-    </div>
-    <script>
-        document.body.onload = loadData;
-        const table = document.getElementById("table");
-
+    <h1>Table</h1>
+    <div class="container">
+        <div class="conAdd">
+            <button id="opAdd" class="opAdd"><i class="gg-math-plus"></i></button>
+        </div>
         
+        <div class="conTable">
+            <table id="table">
+                <!-- <tr>
+                    <th><input type="text" id="myInput" onkeyup="myFunction()" placeholder=" Tag No..." title="Type in a name"></th>
+                    <th><input type="text" id="myInput" onkeyup="myFunction()" placeholder=" names.." title="Type in a name"></th>
+                    <th><input type="text" id="myInput" onkeyup="myFunction()" placeholder=" names.." title="Type in a name"></th>
+                    <th><input type="text" id="myInput" onkeyup="myFunction()" placeholder=" names.." title="Type in a name"></th>
+                    <th><input type="text" id="myInput" onkeyup="myFunction()" placeholder=" names.." title="Type in a name"></th>
+                </tr> -->
+                <tr>
+                    <th>Tag No</th>
+                    <th>Pipe Size</th>
+                    <th>Pipe Location</th>
+                    <th>Installation Date</th>
+                    <th>Inspection Interval</th>
+                    <th>Edit</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Add Modal -->
+        <div id="addModal" class="addModal">
+            <div class="addModal-content">
+                <span class="close">&times;</span>
+                <div class="">
+                    <h1>Create New Data</h1>
+                </div>
+
+                <div class="conAdd">
+                    <input type="int" id="tagNo" placeholder="Tag No.">
+                    <input type="int" id="pipeSize" placeholder="Pipe Size">
+                    <input type="text" id="pipeLo" placeholder="Pipe No.">
+                    <input type="date" id="inDate" placeholder="Installation Date">
+                    <input type="text" id="inInt" placeholder="Inspection Interval">
+                </div>
+
+                    <input class="conAddBut" type="button" value="submit" onclick=addData()>
+            </div>
+
+        </div>
+        <!-- Edit Modal -->
+        <div id="editModal" class="editModal">
+            <div class="editModal-content">
+                <span class="closeEdit" onclick="closeEditModal()">&times;</span>
+                <div class="conEdit">
+                    <h1>Edit Data</h1>
+                </div>
+                <!-- <div class="headEdit">
+                    <input type="text"  value="Tag No.">
+                    <input type="text"  value="Pipe Size">
+                    <input type="text"  value="Pipe No.">
+                    <input type="text"  value="Installation Date">
+                    <input type="text"  value="Inspection Interval">                
+                </div> -->
+                <div class="conEdit">
+                    <p>Tag No.</p>
+                    <input type="int" id="tagNoEdit" placeholder="Tag No.">
+                    <input type="int" id="pipeSizeEdit" placeholder="Pipe Size">
+                    <input type="text" id="pipeLoEdit" placeholder="Pipe No.">
+                    <input type="date" id="inDateEdit" placeholder="Installation Date">
+                    <input type="text" id="inIntEdit" placeholder="Inspection Interval">
+                </div>
+                <div class="">
+                    <input type="button" value="submit" onclick=editData() class="editbut">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.body.onload = loadData();
+        const table = document.getElementById("table");
+        let editDataId;
+
+        // JavaScript functions to open and close edit modal
+        // function openEditModal(data) {
+        //     console.log(data)
+        //     editDataId = data
+        //     document.getElementById('editModal').style.display = 'block';
+
+        //     document.getElementById("tagNoEdit").value = data.tag_no;
+        //     document.getElementById("pipeSizeEdit").value = data.pipe_size;
+        //     document.getElementById("pipeLoEdit").value = data.pipe_location;
+        //     // Format the date to "yyyy-MM-dd" before assigning it to the input field
+        //     const installationDate = new Date(data.installation_date);
+        //     const formattedDate = installationDate.toISOString().split('T')[0];
+        //     document.getElementById("inDateEdit").value = formattedDate;
+
+        //     document.getElementById("inIntEdit").value = data.inspection_interval;
+        // }
+
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        const modal = document.getElementById("addModal");
+        // Get the button that opens the modal
+        const btn = document.getElementById("opAdd");
+        // Get the <span> element that closes the modal
+        const spanAdd = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        spanAdd.onclick = function () {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function addData() {
+            const vTag = document.getElementById("tagNo").value;
+            const vPSize = document.getElementById("pipeSize").value;
+            const vPLo = document.getElementById("pipeLo").value;
+            const vDate = document.getElementById("inDate").value;
+            const vInInt = document.getElementById("inInt").value;
+
+            fetch('https://dis02.dexon-technology.com/api/dexon-exam/add-data', {
+
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+
+                    "tag_no": vTag,
+                    "pipe_size": vPSize,
+                    "pipe_location": vPLo,
+                    "installation_date": vDate,
+                    "inspection_interval": vInInt,
+                    "is_active": true
+                })
+            })
+                .then(response => {
+                    alert("AddData Complete")
+                    window.location.reload();
+
+                })
+                .catch((err) => console.log("Can’t access the response. Blocked by browser?" + err));
+        }
+
+        // <!-- ---------------------------------------------------------------------------------------------------- -->
+        function editData() {
+            const vId = editDataId.id;
+            const vTag = document.getElementById("tagNoEdit").value;
+            const vPSize = document.getElementById("pipeSizeEdit").value;
+            const vPLo = document.getElementById("pipeLoEdit").value;
+            const vDate = document.getElementById("inDateEdit").value;
+            const vInInt = document.getElementById("inIntEdit").value;
+
+            fetch('https://dis02.dexon-technology.com/api/dexon-exam/edit-data', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id": vId,
+                    "tag_no": vTag,
+                    "pipe_size": vPSize,
+                    "pipe_location": vPLo,
+                    "installation_date": vDate,
+                    "inspection_interval": vInInt,
+                    "is_active": true
+                })
+            })
+                .then(response => {
+                    console.log(vTag + 'wtf is this')
+                    alert("EditData Complete")
+                    window.location.reload();
+
+                })
+                .catch((err) => console.log("Can’t access the response. Blocked by browser?" + err));
+        }
+
         async function loadData() {
             const response = await fetch('https://dis02.dexon-technology.com/api/dexon-exam/get-data-list')
-            .then(response => response.json())
-            .then(data =>  {
-                for (let i = 0; i < data.length; i++) {
-                    console.log(data[i]);  
-                    const newTr = document.createElement("tr");
-                    const newTd1 = document.createElement("td");
-                    const newTd2 = document.createElement("td");
-                    const newTd3 = document.createElement("td");
-                    //const newTd4 = document.createElement("td");
-                    const newTd5 = document.createElement("td");
-                    const newTd6 = document.createElement("td");
-                    const newTd7 = document.createElement("td");
+                .then(response => response.json())
+                .then(data => {
+                    for (let i = 0; i < data.length; i++) {
+                        if (data[i].is_active == true) {
+                            console.log(data[i]);
+                            const pId = (data[i].id);
 
-                    
-                    const msec = data[i].installation_date
-                    const indo = new Date(msec);
+                            const newTr = document.createElement("tr");
+                            const newTd1 = document.createElement("td");
+                            const newTd2 = document.createElement("td");
+                            const newTd3 = document.createElement("td");
+                            //const newTd4 = document.createElement("td");
+                            const newTd5 = document.createElement("td");
+                            const newTd6 = document.createElement("td");
+                            const newTd7 = document.createElement("td");
 
-                    const iconBin = document.createElement("i");
-                    iconBin.className = "gg-trash"
-                    const iconPen = document.createElement("i");
-                    iconPen.className = "gg-pen"
+                            const msec = data[i].installation_date
+                            const indo = new Date(msec);
 
-                    const butPen = document.createElement("button")
-                    //butPen = className = "editPen"
-                    const butBin = document.createElement("button")
-                    //butBin = className = "editBin"
+                            const iconBin = document.createElement("i");
+                            iconBin.className = "gg-trash"
+                            const iconPen = document.createElement("i");
+                            iconPen.className = "gg-pen"
+
+                            const butPen = document.createElement("button");
+                            butPen.className = "opEdit";
+                            //butPen.id = "opEdit";
+
+                            const butBin = document.createElement("button")
+                            butBin.className = "deleteBin";
 
 
-                    newTd1.innerHTML = data[i].tag_no
-                    newTd2.innerHTML = data[i].pipe_size
-                    newTd3.innerHTML = data[i].pipe_location
-                    //newTd4.innerHTML = data[i].is_active
-                    newTd5.innerHTML = indo.getDate() + "  "+ indo.getMonth() + "  " + indo.getFullYear()
-                    newTd6.innerHTML = data[i].inspection_interval
+                            butPen.addEventListener("click", (e) => {
+                                console.log("---------")
+                                console.log(data[i])
 
-                    butPen.appendChild(iconPen)
-                    butBin.appendChild(iconBin)
+                                editDataId = data[i]
+                                document.getElementById('editModal').style.display = 'block';
 
-                    newTd7.appendChild(butPen)
-                    newTd7.appendChild(butBin)
+                                document.getElementById("tagNoEdit").value = data[i].tag_no;
+                                document.getElementById("pipeSizeEdit").value = data[i].pipe_size;
+                                document.getElementById("pipeLoEdit").value = data[i].pipe_location;
+                                // Format the date to "yyyy-MM-dd" before assigning it to the input field
+                                const installationDate = new Date(data[i].installation_date);
+                                const formattedDate = installationDate.toISOString().split('T')[0];
+                                document.getElementById("inDateEdit").value = formattedDate;
+                                document.getElementById("inIntEdit").value = data[i].inspection_interval;
 
-                    newTr.appendChild(newTd1)
-                    newTr.appendChild(newTd2)
-                    newTr.appendChild(newTd3)
-                    //newTr.appendChild(newTd4)
-                    newTr.appendChild(newTd5)
-                    newTr.appendChild(newTd6)
-                    newTr.appendChild(newTd7)
+                                console.log("--------------")
+                            })
 
-                    table.appendChild(newTr)
+
+                            butBin.addEventListener("click", (e) => {
+                                fetch('https://dis02.dexon-technology.com/api/dexon-exam/delete-data?id=' + data[i].id,
+                                    { method: 'DELETE' })
+                                    .then(response => response.json())
+                                    .then(del => {
+                                        alert("Delete Complete")
+                                        window.location.reload();
+                                    })
+                            })
+
+                            newTd1.innerHTML = data[i].tag_no
+                            newTd2.innerHTML = data[i].pipe_size
+                            newTd3.innerHTML = data[i].pipe_location
+                            //newTd4.innerHTML = data[i].is_active
+                            newTd5.innerHTML = indo.getDate() + "  " + indo.getMonth() + "  " + indo.getFullYear()
+                            newTd6.innerHTML = data[i].inspection_interval
+
+
+                            butPen.appendChild(iconPen)
+                            butBin.appendChild(iconBin)
+
+                            newTd7.appendChild(butPen)
+                            newTd7.appendChild(butBin)
+
+                            newTr.appendChild(newTd1)
+                            newTr.appendChild(newTd2)
+                            newTr.appendChild(newTd3)
+                            //newTr.appendChild(newTd4)
+                            newTr.appendChild(newTd5)
+                            newTr.appendChild(newTd6)
+                            newTr.appendChild(newTd7)
+
+                            table.appendChild(newTr)
+                        }
+
+                    }
+
+
                 }
-
-
-            }
-        )
-    }
-
+                )
+        }
     </script>
 </body>
 

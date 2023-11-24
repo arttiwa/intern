@@ -160,7 +160,6 @@ namespace test.Controllers
             {
                 { "id", table.Rows[0]["id"] },
                 { "username", table.Rows[0]["username"] },
-                { "password", table.Rows[0]["password"] },
                 { "admin", table.Rows[0]["admin"] },
                 { "tel", table.Rows[0]["tel"] },
                 { "email", table.Rows[0]["email"] },
@@ -204,12 +203,7 @@ namespace test.Controllers
 
             Dictionary<string, object> dict = new Dictionary<string, object>
             {
-                { "id", table.Rows[0]["id"] },
                 { "username", table.Rows[0]["username"] },
-                { "password", table.Rows[0]["password"] },
-                { "admin", table.Rows[0]["admin"] },
-                { "tel", table.Rows[0]["tel"] },
-                { "email", table.Rows[0]["email"] },
                 { "name", table.Rows[0]["name"] }
             };
 

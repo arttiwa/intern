@@ -1,18 +1,25 @@
 body{
-  background: rgb(89, 85, 85);
+  background: #cdcad7;
   text-align: center;
   align-items: center;
-
+  font-family: Arial, Helvetica, sans-serif;
 
   
 }
+.container{
+  background: none;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  margin-top: 5%;
 
+}
 .conTable{
   text-align: center;
-  background: wheat;
+  background: none;
   height: 100%;
   width: auto;
-  margin-top: 20%;
+  border: none;
 
 }
 
@@ -26,10 +33,12 @@ table {
 tr{
   border:1px solid none;
   text-align: center;
+  border-bottom: 4px solid #d63434;
+  background: #9fa898;
 
 }
-tr:hover{
-  background-color: coral;
+td:hover,th:hover{
+  background-color: #bab8ac;
 
 }
 th {
@@ -37,29 +46,201 @@ th {
   text-align: center;
   height: 30px;
   border-bottom: 1px solid #ddd;
-  background: none;
+  background: #7a8772;
+  color: #ffffff;
 }
 td{
   border:1px solid none;
   text-align: center;
   height: 30px;
-  border-bottom: 1px solid #ddd;
   background: none;
 
 }
-td button{
+td .deleteBin{
   border:1px solid none;
   text-align: center;
   height: 30px;
-  background: blueviolet;
+  background: #be5f5f;
   padding-left: 10%;
   border-radius: 5px;
   margin: auto;
+  float: right;
+  border: none;
+  width: 50%;
+  
 }
-td button:hover{
+td .deleteBin:hover{
   border:1px solid none;
   text-align: center;
   height: 30px;
-  background: blue;
+  background: #c02121;
   cursor: pointer;
 }
+i{
+  color: white;
+  margin: auto;
+  
+}
+/* <!-- ---------------------------------------------------------------------------------------------------- --> */
+
+.conAdd{
+  background: none;
+  margin: 20px;
+  background: none;
+}
+
+.conAddBut{
+  background: none;
+  margin: auto;
+  background: #7a8772;
+  
+}
+.conAddBut:hover{
+  background: #029c82;
+}
+
+
+.opAdd{
+  border: none;
+  background: #1db79d;
+  margin: auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+
+}
+.opAdd:hover{
+  background: #029c82;
+}
+.addModal {  /* addModal */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.addModal-content {
+  background-color: #b6ae84;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  
+}
+
+.addModal-content input{
+  background: rgba(188, 160, 88, 0.67);
+  border: none;
+  border-radius: 5px;
+  margin-top: 10%;
+  margin-right: 20px;
+  height: 40px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* <!-- ---------------------------------------------------------------------------------------------------- --> */
+
+.opEdit{
+  border: none;
+  background: green;
+}
+.opEdit:hover{
+  background: #888;
+}
+.opEdit{
+  border: none;
+  background: #f99208;
+  margin: auto;
+  height: 100%;
+  border-radius: 5px;
+  width: 50%;
+  float: left;
+  padding-right: 10px;
+}
+.opEdit:hover{
+  background: #c97303;
+}
+.editModal {  /* addModal */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.editModal-content {
+  background-color: #cdbd6f;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  height: 40%;
+  border-radius: 10px;
+  
+}
+
+.editModal-content input{
+  background: #fcf2c0;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-right: 20px;
+  height: 30px;
+}
+
+/* The Close Button */
+.closeEdit {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeEdit:hover, .closeEdit:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.conedit{
+  background: greenyellow;
+}
+
+.addbut{
+  float: right;
+  background: #029c82;
+
+}
+.editbut{
+  float: right;
+}
+
+

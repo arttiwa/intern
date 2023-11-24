@@ -11,6 +11,7 @@
 /Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/Microsoft.OpenApi.dll
 /Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/MySqlConnector.dll
 /Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/MySqlConnector.DependencyInjection.dll
+/Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/dis_trainee_02/Desktop/test/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
